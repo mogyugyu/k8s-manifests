@@ -22,6 +22,9 @@ spec:
             replicaSoftAntiAffinity: false
             replicaAutoBalance: least-effort
             allowVolumeCreationWithDegradedAvailability: false
+          persistence:
+            defaultClassReplicaCount: 2
+            defaultDataLocality: "best-effort"
           networkPolicies:
             enabled: true
             type: "k3s"
