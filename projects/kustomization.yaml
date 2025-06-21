@@ -7,6 +7,7 @@ resources:
   - base/gha-runner.yaml
   - base/misskey-bots.yaml
   - base/mmmm.yaml
+  - base/mo.yaml
   - base/pow.yaml
   - base/smee.yaml
   - base/tianji.yaml
