@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    notifications.argoproj.io/subscribe.on-deployed.github: ""
+  name: mo
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: mo
+    server: https://kubernetes.default.svc
+  project: mo
+  source:
+    path: discord-bots
+    repoURL: https://github.com/mo-tomi/k8s-deployments.git
+    targetRevision: HEAD
+    directory:
+      recurse: true
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - PruneLast=true
+      - CreateNamespace=true
