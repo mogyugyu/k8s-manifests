@@ -9,13 +9,19 @@
   ],
   "commitBodyTable": true,
   "kubernetes": {
-    "fileMatch": ["\\.yaml$"]
+    "managerFilePatterns": [
+      "/\\.yaml$/"
+    ]
   },
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["k3s-upgrade/plans.yaml"],
-      "matchStrings": ["version\\s*:\\s*[\"']?(?<currentValue>.+?)[\"']?\\s"],
+      "managerFilePatterns": [
+        "/k3s-upgrade/plans.yaml/"
+      ],
+      "matchStrings": [
+        "version\\s*:\\s*[\"']?(?<currentValue>.+?)[\"']?\\s"
+      ],
       "depNameTemplate": "k3s",
       "versioningTemplate": "semver-coerced",
       "datasourceTemplate": "custom.k3s"
@@ -31,16 +37,25 @@
   },
   "packageRules": [
     {
-      "matchManagers": ["kubernetes"],
+      "matchManagers": [
+        "kubernetes"
+      ],
       "semanticCommitType": "manifest",
       "semanticCommitScope": null
     },
     {
-      "matchDepNames": ["ghcr.io/discordjs-japan/om"],
+      "matchDepNames": [
+        "ghcr.io/discordjs-japan/om"
+      ],
       "automerge": true,
       "automergeType": "branch",
       "ignoreTests": true
     },
-    { "matchFileNames": ["k3s-upgrade/plans.yaml"], "pinDigests": false }
+    {
+      "matchFileNames": [
+        "k3s-upgrade/plans.yaml"
+      ],
+      "pinDigests": false
+    }
   ]
 }
