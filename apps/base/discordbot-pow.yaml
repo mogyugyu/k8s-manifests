@@ -13,7 +13,7 @@ spec:
     server: https://kubernetes.default.svc
   project: pow
   source:
-    path: pow
+    path: discordbot-pow
     repoURL: https://github.com/kazukazu123123/k8s-deployments.git
     targetRevision: HEAD
   syncPolicy:
