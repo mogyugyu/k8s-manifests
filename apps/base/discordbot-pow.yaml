@@ -14,7 +14,7 @@ spec:
   project: pow
   source:
     path: pow
-    repoURL: https://github.com/eoeo-org/eoeo-deployments.git
+    repoURL: https://github.com/kazukazu123123/k8s-deployments.git
     targetRevision: HEAD
   syncPolicy:
     automated:
