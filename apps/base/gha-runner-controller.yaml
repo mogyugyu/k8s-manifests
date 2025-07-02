@@ -14,7 +14,7 @@ spec:
   sources:
     - chart: gha-runner-scale-set-controller
       repoURL: ghcr.io/actions/actions-runner-controller-charts
-      targetRevision: 0.10.1
+      targetRevision: 0.12.1
       helm:
         releaseName: arc
     - repoURL: https://github.com/mogyugyu/k8s-deployments.git
